@@ -11,7 +11,7 @@ Development is being done using a cheap china-made PL2303 module slightly modifi
 |	RJ11 connector	|	Color	|	Function	|	Serial Port	|
 |-------------------|-----------|---------------|---------------|
 |	1				|	Blue	|	TxD			|	RxD			|
-|	2				|	Yellow	|	RxD			|	Txd			|
+|	2				|	Yellow	|	RxD			|	TxD			|
 |	3				|	Green	|	GND			|	GND			|
 |	4				|	Red		|	9V DC		|	-			|
 |	5				|	Black	|	PWR BTN		|	RTS			|
