@@ -51,3 +51,11 @@ while True:
 	radio.setFrequency(float(freq))	
 
 ```
+
+## radio support
+
+Radios supported:
+
+* FT-7800
+
+Hoping to support more rigs in time.
