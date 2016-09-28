@@ -1,0 +1,248 @@
+Yaesu FT-7800 42 byte display packet
+MSB
+
+Main display (charN) is six  13-segment characters. segment numbers are designated like this:
+	
+	 13 13 13 13 13
+	9              12
+	9  10   4   11 12
+	9   10  4  11  12
+	9              12
+	  7777     8888
+	2               6
+	2    3  4   5   6
+	2  3    4    5  6
+	2               6
+	 1 1 1 1 1 1 1 1
+
+Upper left (ucharN) display is one followed by two 7-segment characters
+	separated by a dash (8-88)
+
+	 7 7 7
+	5     6
+	5     6
+	 4 4 4
+	2     3
+	2     3
+	 1 1 1 
+
+byt	bit	function
+----------------
+ 0	0	9600 badge (lower right)
+ 0	1	char1	seg2
+ 0	2	char1	seg3
+ 0	3	char1	seg7
+ 0	4	char1	seg10
+ 0	5	char1	seg9
+ 0	6	char1	seg13
+ 0	7	
+
+ 1	0	left pointing triangle (top line)
+ 1	1	char1	seg11
+ 1	2	char1	seg4
+ 1	3	char1	seg12
+ 1	4	char1	seg8
+ 1	5	char1	seg6
+ 1	6	char1	seg5
+ 1	7
+
+ 2	0	char1	seg1
+ 2	1	lock symbol (lower right)
+ 2	2	low power symbol (bottom line)
+ 2	3	char2	seg2
+ 2	4	char2	seg3
+ 2	5	char2	seg7
+ 2	6	char2	seg10
+ 2	7
+
+ 3	0	char2	seg9
+ 3	1	char2	seg13
+ 3	2	skip symbol (top line)
+ 3	3	char2	seg11
+ 3	4	char2	seg4
+ 3	5	char2	seg12
+ 3	6	char2	seg8
+ 3	7
+
+ 4	0	char2	seg6
+ 4	1	char2	seg5
+ 4	2	char2   seg1
+ 4	3	medium power symbol (bottom line)
+ 4	4	busy symbol (bottom line)
+ 4	5	char3	seg2
+ 4	6	char3	seg3
+ 4	7
+
+ 5	0	char3	seg7
+ 5	1	char3	seg10
+ 5	2	char3   seg9
+ 5	3	char3   seg13
+ 5	4	DCS symbol (top line)
+ 5	5	char3	seg11
+ 5	6	char3	seg4
+ 5	7
+
+ 6	0	char3	seg12
+ 6	1	char3	seg8
+ 6	2	char3   seg6
+ 6	3	char3   seg5
+ 6	4	char3   seg1
+ 6	5	meter s0
+ 6	6	meter s1
+ 6	7
+
+ 7	0	decimal point (center screen)
+ 7	1	meter s2
+ 7	2	char4   seg2
+ 7	3	
+ 7	4	
+ 7	5	
+ 7	6	
+ 7	7
+
+ 8	0	char4	seg3
+ 8	1	char4	seg7
+ 8	2	char4	seg10
+ 8	3	char4	seg9
+ 8	4	char4	seg13
+ 8	5	split negative symbol (top line)
+ 8	6	char4	seg11
+ 8	7
+
+ 9	0	char4	seg4
+ 9	1	char4	seg12
+ 9	2	char4	seg8
+ 9	3	char4	seg6
+ 9	4	char4	seg5
+ 9	5	char4   seg1
+ 9	6	split positive symbol (top line)
+ 9	7
+
+10	0	meter s3
+10	1	char5	seg2
+10	2	char5	seg3
+10	3	char5	seg7
+10	4	char5	seg10
+10	5	char5   seg9
+10	6	char5	seg13
+10	7
+
+11	0	ENC symbol (top line)
+11	1	char5	seg11
+11	2	char5	seg4
+11	3	char5	seg12
+11	4	char5	seg8
+11	5	char5   seg6
+11	6	char5	seg5
+11	7
+
+12	0	char5	seg1
+12	1	meter s4
+12	2	meter s5
+12	3	char6	seg2
+12	4	char6	seg3
+12	5	char6   seg7
+12	6	char6	seg10
+12	7
+
+13	0	char6	seg9
+13	1	char6	seg13
+13	2	DEC symbol (top line)	
+13	3	char6	seg11
+13	4	char6	seg4
+13	5	char6	seg12
+13	6	char6	seg8
+13	7	
+
+14	0	char6	seg6
+14	1	char6	seg5
+14	2	char6	seg1
+14	3	meter s6
+14	4	decimal point (screen right)
+14	5	TX symbol (top right)
+14	6	meter s7
+14	7	
+
+15	0	half-khz symbol (screen right)
+15	1	meter s8
+15	2	APO symbol (middle right)
+15	3	
+15	4	
+15	5	
+15	6	
+15	7	
+
+(big void of zeros)
+
+36	0	
+36	1	
+36	2	
+36	3	
+36	4	uchar3 seg6
+36	5	uchar3 seg3
+36	6	uchar3 seg7
+36	7	
+
+37	0	uchar3	seg4
+37	1	uchar3	seg5
+37	2	uchar3	seg2
+37	3	PRI symbol (screen left)
+37	4	uchar3	seg1
+37	5	uchar2	seg6
+37	6	uchar2	seg3
+37	7	
+
+38	0	uchar2	seg7
+38	1	uchar2	seg4
+38	2	uchar2	seg5
+38	3	uchar2	seg2
+38	4	uchar-dash
+38	5	uchar2	seg1
+38	6	
+38	7	
+
+38	0	uchar2	seg7
+38	1	uchar2	seg4
+38	2	uchar2	seg5
+38	3	uchar2	seg2
+38	4	uchar-dash
+38	5	uchar2	seg1
+38	6	
+38	7	
+
+39	0	
+39	1	
+39	2	
+39	3	uchar1	seg6
+39	4	uchar1	seg3
+39	5	uchar1	seg7
+39	6	uchar1	seg4
+39	7	
+
+40	0	uchar1	seg5
+40	1	uchar1	seg2
+40	2	MT symbol (screen left)
+40	3	uchar1	seg1
+40	4	S-DX symbol (screen left)
+40	5	INTERNET symbol (screen left)
+40	6	AM symbol (lower left)
+40	7	
+
+41	0	SET symbol (lower left) 
+41	1	backlight oct0			   
+41	2	backlight oct1		   
+41	3	backlight oct2		   
+41	4						   
+41	5						   
+41	6						   
+41	7						   
+		NOTE ON BACKLIGHT BITMASK
+		0x00	off
+		0x06 	very dim
+		0x08	medium
+		0x0A	bright
+		0x0C	full bright
+
+
+
+
