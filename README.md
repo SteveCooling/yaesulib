@@ -4,6 +4,8 @@ Python library for programmatically controlling Yaesu mobile ham radios without 
 
 It uses a (USB) TTL serial port to emulate the front panel, enabling control of the radio from software.
 
+See it in action here: https://www.youtube.com/watch?v=xfGuzuzAQOk
+
 ## connecting
 
 Development is being done using a cheap china-made PL2303 module slightly modified to gain access to the RTS pin.
